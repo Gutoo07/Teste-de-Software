@@ -1,0 +1,4 @@
+﻿Núm;RG;Especialidade;Dia;Hora;Particular;Codigo de Autorização;Resultado Esperado
+1;360510048;Ortopedista;13/05/2025;13:00;false;null;Satisfatório
+2;360510048;Ortopedista;30/12/2025;13:00;false;null;Data inválida por ultrapassar 30 dias da data atual
+;;;;;;;

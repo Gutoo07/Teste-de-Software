@@ -8,11 +8,6 @@ public class LoginRequest {
 	private String password;
 
 	
-	public LoginRequest(String rg, String password) {
-		super();
-		this.rg = rg;
-		this.password = password;
-	}
 	public String getRg() {
 		return rg;
 	}

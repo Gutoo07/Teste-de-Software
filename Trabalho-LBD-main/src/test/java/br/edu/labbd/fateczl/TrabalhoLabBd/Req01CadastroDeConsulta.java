@@ -1,13 +1,11 @@
 package br.edu.labbd.fateczl.TrabalhoLabBd;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+
 
 import br.edu.labbd.fateczl.TrabalhoLabBd.persistence.ConsultaDao;
 import br.edu.labbd.fateczl.TrabalhoLabBd.persistence.EspecialidadeDao;
@@ -20,7 +18,8 @@ class Req01CadastroDeConsulta {
 	void ct01CadastroComSucesso() {
 		String rg = "360510048";
 		String especialidade = "Ortopedista";
-		String dia = "13/04/2025";
+		//a data precisa ser de ate 30 dias contando a partir do dia atual
+		String dia = "13/05/2025";
 		String hora = "13:00";
 		boolean particular = false;
 		String codigo_autorizacao = "";
@@ -38,7 +37,7 @@ class Req01CadastroDeConsulta {
 		} catch (SQLException | ClassNotFoundException e) {
 			erro = e.getMessage();
 		} finally {
-			assertNotEquals("", saida);
+			assertEquals("", erro);
 			System.out.println("Saida: "+saida);
 			System.out.println("Erro: "+erro);
 			try {
@@ -53,9 +52,9 @@ class Req01CadastroDeConsulta {
 	}
 	@Test
 	void ct02CadastroComRgInvalido() {
-		String rg = "123";
+		String rg = "360510048";
 		String especialidade = "Ortopedista";
-		String dia = "13/04/2025";
+		String dia = "30/12/2025";
 		String hora = "13:00";
 		boolean particular = false;
 		String codigo_autorizacao = "";
